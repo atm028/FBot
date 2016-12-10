@@ -11,13 +11,13 @@ TOKEN = None
 MESSAGE_URL = "https://graph.facebook.com/v2.6/me/messages"
 SETTINGS_URL = "https://graph.facebook.com/v2.6/me/thread_settings"
 
-@app.route("/", methods=["GET"])
+@app.route("/fhook", methods=["GET"])
 def verify_bot():
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
         return request.args.get("hub.hallenge"], 200
     return "OK", 200
 
-@app.route("/", methods=["POST"])
+@app.route("/fhook", methods=["POST"])
 def webhook():
     rx_data = request.get_json()
     for entry in rx_data["entry"]:
