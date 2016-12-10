@@ -84,8 +84,7 @@ def main():
     try:
         global TOKEN
         k, v = csl.kv.get("Facebook/Config/TOKEN")
-        #TOKEN = str(v["Value"])
-        TOKEN = "EAAY2o4XEu5kBAKaRGjZAbdN6UKgxjp3sEx97urMlhbWyOFxrZAQwNfL3CWRsCJnQSSmIqaIA6iKJKiqeGVBbXGXyZBS2LLpdvmXlQo4kWO8aZAUEm9No4O5mQF0admZCxslTeTIYlZCRzQn1mddhIS2BolsGU1Sjg3AaC6xx98IAZDZD"
+        TOKEN = str(v["Value"].decode("utf-8"))
 
         FBWelcomeMessage()
         FBStartButton()
